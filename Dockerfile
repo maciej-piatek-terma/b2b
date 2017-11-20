@@ -1,4 +1,4 @@
-FROM php:7-apache
+FROM php:7.1-apache
 
 RUN apt-get update && apt-get install --no-install-recommends  -y \
     pkg-config \
@@ -42,8 +42,8 @@ RUN dpkg-reconfigure -f noninteractive tzdata
 
 #XDEBUG
 RUN echo "xdebug.remote_enable=1" >> /usr/local/etc/php/php.ini
+
 RUN echo "pcre.jit=0" >> /usr/local/etc/php/php.ini
-RUN echo "extension=php_mysqli.so" >> /usr/local/etc/php/php.ini
 
 RUN a2enmod rewrite
 
