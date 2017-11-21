@@ -35,6 +35,11 @@ RUN pecl install xdebug && docker-php-ext-enable xdebug \
   && docker-php-ext-install -j$(nproc) gd pdo pdo_mysql mbstring zip bcmath intl exif fileinfo \
   && docker-php-ext-enable opcache
 
+RUN apt-get update && apt-get install --yes --no-install-recommends \
+    libssl-dev
+
+RUN pecl install mongodb \
+    && docker-php-ext-enable mongodb
 
 #Set the timezone.
 RUN echo "Europe/Warsaw" > /etc/timezone
