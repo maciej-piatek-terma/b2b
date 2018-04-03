@@ -7,7 +7,6 @@ RUN apt-get update && apt-get install --no-install-recommends  -y \
     libicu-dev \
     libssl-dev \
     libxml2-dev \
-    php-soap \
     vim \
     libfreetype6-dev \
     libpng12-dev \
